@@ -13,8 +13,6 @@ import com.epam.jwd.core_final.exception.CrewMemberUpdateException;
 import com.epam.jwd.core_final.exception.MissionNotAbleCreateException;
 import com.epam.jwd.core_final.factory.impl.CrewMemberFactory;
 import com.epam.jwd.core_final.service.CrewService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,8 +22,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CrewServiceImpl implements CrewService {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(CrewServiceImpl.class);
 
     private static CrewServiceImpl instance;
     private final List<CrewMember> crewMembers;

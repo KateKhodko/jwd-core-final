@@ -1,6 +1,10 @@
 package com.epam.jwd.core_final.factory;
 
-import com.epam.jwd.core_final.domain.*;
+import com.epam.jwd.core_final.domain.BaseEntity;
+import com.epam.jwd.core_final.domain.CrewMember;
+import com.epam.jwd.core_final.domain.FlightMission;
+import com.epam.jwd.core_final.domain.Planet;
+import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.factory.impl.CrewMemberFactory;
 import com.epam.jwd.core_final.factory.impl.FlightMissionFactory;
 import com.epam.jwd.core_final.factory.impl.PlanetFactory;

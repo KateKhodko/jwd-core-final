@@ -6,10 +6,6 @@ import com.epam.jwd.core_final.domain.*;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import com.epam.jwd.core_final.factory.EntityFactory;
 import com.epam.jwd.core_final.factory.EntityFactoryResolver;
-import com.epam.jwd.core_final.factory.impl.CrewMemberFactory;
-import com.epam.jwd.core_final.factory.impl.FlightMissionFactory;
-import com.epam.jwd.core_final.factory.impl.PlanetFactory;
-import com.epam.jwd.core_final.factory.impl.SpaceshipFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,7 +25,7 @@ public class NassaContext implements ApplicationContext {
     @Override
     public <T extends BaseEntity> Collection<T> retrieveBaseEntityList(Class<T> tClass) {
         if (tClass.equals(CrewMember.class)) {
-            return  (Collection<T>) crewMembers;
+            return (Collection<T>) crewMembers;
         }
         if (tClass.equals(Spaceship.class)) {
             return (Collection<T>) spaceships;

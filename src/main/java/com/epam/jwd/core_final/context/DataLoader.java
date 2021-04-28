@@ -1,6 +1,13 @@
 package com.epam.jwd.core_final.context;
 
-import com.epam.jwd.core_final.domain.*;
+import com.epam.jwd.core_final.domain.ApplicationProperties;
+import com.epam.jwd.core_final.domain.CrewMember;
+import com.epam.jwd.core_final.domain.FlightMission;
+import com.epam.jwd.core_final.domain.Planet;
+import com.epam.jwd.core_final.domain.Point;
+import com.epam.jwd.core_final.domain.Rank;
+import com.epam.jwd.core_final.domain.Role;
+import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import com.epam.jwd.core_final.factory.impl.CrewMemberFactory;
 import com.epam.jwd.core_final.factory.impl.PlanetFactory;
@@ -11,7 +18,11 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
