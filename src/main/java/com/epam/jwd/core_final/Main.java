@@ -10,14 +10,10 @@ public class Main {
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
-        String startMessage = "Program started";
-        LOGGER.trace(startMessage);
         try {
             Application.start();
         } catch (InvalidStateException e) {
             LOGGER.error(e.getMessage());
         }
-        String endMessage = "Program finished";
-        LOGGER.trace(endMessage);
     }
 }

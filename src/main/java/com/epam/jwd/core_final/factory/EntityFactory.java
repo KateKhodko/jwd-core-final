@@ -7,4 +7,5 @@ public interface EntityFactory<T extends BaseEntity> {
     T create(Object... args);
 
     T assignId(Long id, T item);
+
 }
