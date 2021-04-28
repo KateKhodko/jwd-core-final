@@ -5,6 +5,7 @@ import com.epam.jwd.core_final.context.DataLoader;
 import com.epam.jwd.core_final.domain.*;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import com.epam.jwd.core_final.factory.EntityFactory;
+import com.epam.jwd.core_final.factory.EntityFactoryResolver;
 import com.epam.jwd.core_final.factory.impl.CrewMemberFactory;
 import com.epam.jwd.core_final.factory.impl.FlightMissionFactory;
 import com.epam.jwd.core_final.factory.impl.PlanetFactory;
@@ -59,7 +60,7 @@ public class NassaContext implements ApplicationContext {
         if (items == null) return;
         items.clear();
         @SuppressWarnings("unchecked")
-        EntityFactory<T> entityFactory = getFactory(tClass);
+        EntityFactory<T> entityFactory = EntityFactoryResolver.instance.getFactory(tClass);
         if (entityFactory == null) {
             return;
         }
@@ -67,23 +68,6 @@ public class NassaContext implements ApplicationContext {
             T newT = entityFactory.assignId(generateId(items), entity);
             items.add(newT);
         }
-    }
-
-    @SuppressWarnings("rawtypes")
-    private <T extends BaseEntity> EntityFactory getFactory(Class<T> tClass) {
-        if (tClass.equals(CrewMember.class)) {
-            return new CrewMemberFactory();
-        }
-        if (tClass.equals(Spaceship.class)) {
-            return new SpaceshipFactory();
-        }
-        if (tClass.equals(Planet.class)) {
-            return new PlanetFactory();
-        }
-        if (tClass.equals(FlightMission.class)) {
-            return new FlightMissionFactory();
-        }
-        return null;
     }
 
     public static <T extends BaseEntity> Long generateId(Collection<T> collection) {
