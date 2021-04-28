@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 class CrewMembersMenu {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DataLoader.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CrewMembersMenu.class);
 
     private final MainMenu mainMenu;
 
