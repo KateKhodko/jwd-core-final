@@ -1,6 +1,5 @@
 package com.epam.jwd.core_final.menu;
 
-import com.epam.jwd.core_final.context.DataLoader;
 import com.epam.jwd.core_final.criteria.CrewMemberCriteria;
 import com.epam.jwd.core_final.domain.CrewMember;
 import com.epam.jwd.core_final.domain.Rank;
