@@ -64,7 +64,9 @@ public class MissionMenu {
             FlightMission newMission = MissionServiceImpl.getInstance().createMission(mission);
             SpaceShipServiceImpl.getInstance().assignRandomShipOnMission(newMission);
             CrewServiceImpl.getInstance().assignRandomMembersOnMission(newMission);
-            System.out.println("Mission has created: " + newMission);
+            String createMission = "Mission has created: " + newMission;
+            System.out.println(createMission);
+            LOGGER.info(createMission);
         } catch (SpaceshipNotAbleAssignedException | MissionNotAbleCreateException | CrewMemberNotAbleAssignedException e) {
             LOGGER.error(e.getMessage());
         }
