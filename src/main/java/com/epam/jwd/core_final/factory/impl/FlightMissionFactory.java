@@ -6,7 +6,6 @@ import com.epam.jwd.core_final.domain.Planet;
 import com.epam.jwd.core_final.factory.EntityFactory;
 import com.epam.jwd.core_final.service.impl.SpacemapServiceImpl;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class FlightMissionFactory implements EntityFactory<FlightMission> {

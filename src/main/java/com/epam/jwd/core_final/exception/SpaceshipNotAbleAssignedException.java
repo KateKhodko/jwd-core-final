@@ -2,7 +2,7 @@ package com.epam.jwd.core_final.exception;
 
 import com.epam.jwd.core_final.domain.Spaceship;
 
-public class SpaceshipNotAbleAssignedException extends RuntimeException{
+public class SpaceshipNotAbleAssignedException extends RuntimeException {
 
     private final Spaceship spaceship;
 

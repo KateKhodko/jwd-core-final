@@ -53,7 +53,7 @@ public class NassaContext implements ApplicationContext {
     private void addCrewMembers() throws InvalidStateException {
         List<CrewMember> members = DataLoader.getInstance().readCrew();
         crewMembers.clear();
-        for (CrewMember crewMember: members) {
+        for (CrewMember crewMember : members) {
             CrewMember newMember = new CrewMemberFactory().assignId(generateId(crewMembers), crewMember);
             crewMembers.add(newMember);
         }
@@ -62,7 +62,7 @@ public class NassaContext implements ApplicationContext {
     private void addSpaceShips() throws InvalidStateException {
         List<Spaceship> ships = DataLoader.getInstance().readSpaceships();
         spaceships.clear();
-        for (Spaceship spaceship: ships) {
+        for (Spaceship spaceship : ships) {
             Spaceship newSpaceship = new SpaceshipFactory().assignId(generateId(spaceships), spaceship);
             spaceships.add(newSpaceship);
         }
@@ -71,7 +71,7 @@ public class NassaContext implements ApplicationContext {
     private void addPlanets() throws InvalidStateException {
         List<Planet> planets = DataLoader.getInstance().readPlanets();
         planetMap.clear();
-        for (Planet planet: planets) {
+        for (Planet planet : planets) {
             Planet newPlanet = new PlanetFactory().assignId(generateId(planetMap), planet);
             planetMap.add(newPlanet);
         }

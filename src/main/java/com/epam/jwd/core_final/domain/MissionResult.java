@@ -2,7 +2,7 @@ package com.epam.jwd.core_final.domain;
 
 import com.epam.jwd.core_final.exception.UnknownEntityException;
 
-public enum MissionResult implements BaseEntity{
+public enum MissionResult implements BaseEntity {
     CANCELLED(1L),
     FAILED(2L),
     PLANNED(3L),

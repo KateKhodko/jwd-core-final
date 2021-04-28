@@ -28,7 +28,7 @@ public class SpaceshipFactory implements EntityFactory<Spaceship> {
         return new Spaceship(id, item.getName(), item.getCrew(), item.getFlightDistance());
     }
 
-    private Map<Role, Short> castCrewMap(Map<?, ?> crewArgs) throws IllegalStateException{
+    private Map<Role, Short> castCrewMap(Map<?, ?> crewArgs) throws IllegalStateException {
         Map<Role, Short> crew = new HashMap<>();
 
         for (Map.Entry<?, ?> entry : crewArgs.entrySet()) {

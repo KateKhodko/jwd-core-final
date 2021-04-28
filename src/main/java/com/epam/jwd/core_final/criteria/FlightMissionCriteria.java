@@ -2,7 +2,6 @@ package com.epam.jwd.core_final.criteria;
 
 import com.epam.jwd.core_final.domain.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -82,7 +81,7 @@ public class FlightMissionCriteria extends Criteria<FlightMission> {
         }
 
         public MissionBuilder withAssignedCrew(List<CrewMember> assignedCrew) {
-            flightMissionCriteria.assignedCrew =  assignedCrew;
+            flightMissionCriteria.assignedCrew = assignedCrew;
             return this;
         }
 

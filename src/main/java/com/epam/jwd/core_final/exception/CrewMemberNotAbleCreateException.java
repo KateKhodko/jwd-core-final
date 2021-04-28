@@ -2,7 +2,7 @@ package com.epam.jwd.core_final.exception;
 
 import com.epam.jwd.core_final.domain.CrewMember;
 
-public class CrewMemberNotAbleCreateException extends RuntimeException{
+public class CrewMemberNotAbleCreateException extends RuntimeException {
     private final CrewMember crewMember;
 
     public CrewMemberNotAbleCreateException(CrewMember crewMember) {

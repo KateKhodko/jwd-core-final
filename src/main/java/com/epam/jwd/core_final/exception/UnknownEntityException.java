@@ -25,7 +25,7 @@ public class UnknownEntityException extends RuntimeException {
         if (args != null && args.length != 0) {
             message += " args:\n";
             StringBuilder argsStr = new StringBuilder();
-            for (Object arg: args) {
+            for (Object arg : args) {
                 argsStr.append(arg.toString()).append("\n");
             }
             message += argsStr;

@@ -8,8 +8,6 @@ import com.epam.jwd.core_final.service.impl.MissionServiceImpl;
 import com.epam.jwd.core_final.service.impl.SpaceShipServiceImpl;
 import com.epam.jwd.core_final.service.impl.SpacemapServiceImpl;
 
-import java.util.function.Supplier;
-
 public interface Application {
 
     static void start() throws InvalidStateException {

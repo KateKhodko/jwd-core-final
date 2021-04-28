@@ -1,7 +1,5 @@
 package com.epam.jwd.core_final.domain;
 
-import com.epam.jwd.core_final.util.PropertyReaderUtil;
-
 import static com.epam.jwd.core_final.domain.PropertyKey.*;
 import static com.epam.jwd.core_final.util.PropertyReaderUtil.*;
 

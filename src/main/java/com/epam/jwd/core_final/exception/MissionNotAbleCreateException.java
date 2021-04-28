@@ -2,7 +2,7 @@ package com.epam.jwd.core_final.exception;
 
 import com.epam.jwd.core_final.domain.FlightMission;
 
-public class MissionNotAbleCreateException extends RuntimeException{
+public class MissionNotAbleCreateException extends RuntimeException {
     private final FlightMission flightMission;
 
     public MissionNotAbleCreateException(FlightMission flightMission) {
