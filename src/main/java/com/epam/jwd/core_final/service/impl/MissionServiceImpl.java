@@ -119,11 +119,11 @@ public class MissionServiceImpl implements MissionService {
                         && (flightMission.getEndDate().isAfter(LocalDateTime.now())
                         || flightMission.getMissionResult().equals(FAILED))
                 ) {
-                    return false;
+                    return true;
                 }
             }
         }
-        return true;
+        return false;
     }
 
     public boolean checkShipOnMission(Spaceship spaceship) {

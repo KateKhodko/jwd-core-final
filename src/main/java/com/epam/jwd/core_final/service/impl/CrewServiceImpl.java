@@ -85,7 +85,7 @@ public class CrewServiceImpl implements CrewService {
         if (!oldCrewMember.isReadyForNextMissions()) {
             throw new CrewMemberUpdateException("Crew member is not ready for next missions");
         }
-        if (!MissionServiceImpl.getInstance().checkCrewMembersOnMission(oldCrewMember)) {
+        if (MissionServiceImpl.getInstance().checkCrewMembersOnMission(oldCrewMember)) {
             throw new CrewMemberUpdateException("Crew member is already on mission");
         }
         crewMembers.set(index, crewMember);
@@ -108,7 +108,7 @@ public class CrewServiceImpl implements CrewService {
         if (!crewMembers.contains(crewMember)
                 || !crewMember.isReadyForNextMissions()
                 || !validateMembersCountOnMission(crewMember, flightMission)
-                || !MissionServiceImpl.getInstance().checkCrewMembersOnMission(crewMember)) {
+                || MissionServiceImpl.getInstance().checkCrewMembersOnMission(crewMember)) {
             throw new CrewMemberNotAbleAssignedException(crewMember);
         }
         flightMission.getAssignedCrew().add(crewMember);

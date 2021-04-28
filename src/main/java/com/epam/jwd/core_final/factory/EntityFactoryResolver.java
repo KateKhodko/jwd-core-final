@@ -10,7 +10,7 @@ public class EntityFactoryResolver {
     public static final EntityFactoryResolver instance = new EntityFactoryResolver();
 
     @SuppressWarnings("rawtypes")
-    public  <T extends BaseEntity> EntityFactory getFactory(Class<T> tClass) {
+    public <T extends BaseEntity> EntityFactory getFactory(Class<T> tClass) {
         if (tClass.equals(CrewMember.class)) {
             return new CrewMemberFactory();
         }
