@@ -7,9 +7,6 @@ import java.util.List;
 
 public class PlanetMenu {
 
-    public PlanetMenu(MainMenu mainMenu) {
-    }
-
     void printPlanets() {
         List<Planet> planets = SpacemapServiceImpl.getInstance().findAllPlanets();
         planets.forEach(System.out::println);

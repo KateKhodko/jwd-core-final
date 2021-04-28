@@ -41,7 +41,7 @@ public class MainMenu {
         crewMembersMenu = new CrewMembersMenu(this);
         spaceShipMenu = new SpaceShipMenu(this);
         missionMenu = new MissionMenu(this);
-        planetMenu = new PlanetMenu(this);
+        planetMenu = new PlanetMenu();
     }
 
     public void start() {
