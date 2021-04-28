@@ -1,16 +1,18 @@
 package com.epam.jwd.core_final.context;
 
+import com.epam.jwd.core_final.menu.MainMenu;
+
 // todo replace Object with your own types
 @FunctionalInterface
 public interface ApplicationMenu {
 
     ApplicationContext getApplicationContext();
 
-    default Object printAvailableOptions() {
-        return null;
+    default void printAvailableOptions() {
+        //MainMenu.instance.printMenu();
     }
 
-    default Object handleUserInput(Object o) {
-        return null;
+    default void handleUserInput() {
+
     }
 }

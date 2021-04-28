@@ -1,0 +1,181 @@
+[ {
+  "id" : 1,
+  "name" : "efdf",
+  "startDate" : "2021-04-28T03:54:29.4006594",
+  "endDate" : "2021-04-28T03:57:08.4006594",
+  "distance" : 159,
+  "assignedSpaceShip" : {
+    "id" : 21,
+    "name" : "Burn",
+    "crew" : {
+      "FLIGHT_ENGINEER" : 9,
+      "PILOT" : 3,
+      "COMMANDER" : 2,
+      "MISSION_SPECIALIST" : 10
+    },
+    "flightDistance" : 452842,
+    "readyForNextMissions" : true
+  },
+  "assignedCrew" : [ {
+    "id" : 1,
+    "name" : "Davey Bentley",
+    "role" : "COMMANDER",
+    "rank" : "SECOND_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 2,
+    "name" : "Zoe Day",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "TRAINEE",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 3,
+    "name" : "Petra Potter",
+    "role" : "PILOT",
+    "rank" : "CAPTAIN",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 4,
+    "name" : "Hafsa Harding",
+    "role" : "PILOT",
+    "rank" : "SECOND_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 5,
+    "name" : "Frazer Carr",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "CAPTAIN",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 6,
+    "name" : "Reya Handley",
+    "role" : "PILOT",
+    "rank" : "SECOND_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 7,
+    "name" : "Isabelle Person",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "SECOND_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 8,
+    "name" : "Sara Barnes",
+    "role" : "COMMANDER",
+    "rank" : "FIRST_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 12,
+    "name" : "Marta Hendrix",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "FIRST_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 14,
+    "name" : "Kayleigh Sellers",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "TRAINEE",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 15,
+    "name" : "Azra Hastings",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "FIRST_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 16,
+    "name" : "Cerys Mcdonnell",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "CAPTAIN",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 17,
+    "name" : "Aronas Paul",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "FIRST_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 18,
+    "name" : "Alanah Stanton",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "FIRST_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 21,
+    "name" : "Cobie Coles",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "CAPTAIN",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 22,
+    "name" : "Talia Mcnamara",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "FIRST_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 25,
+    "name" : "Melisa Villalobos",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "TRAINEE",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 29,
+    "name" : "Kaja Rogers",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "TRAINEE",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 31,
+    "name" : "Annabella Lambert",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "CAPTAIN",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 33,
+    "name" : "Asiyah Haines",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "TRAINEE",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 35,
+    "name" : "Kiran Burns",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "SECOND_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 36,
+    "name" : "Neave Mustafa",
+    "role" : "FLIGHT_ENGINEER",
+    "rank" : "FIRST_OFFICER",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 39,
+    "name" : "Beatrix Mcdonald",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "TRAINEE",
+    "readyForNextMissions" : true
+  }, {
+    "id" : 40,
+    "name" : "Karan Avalos",
+    "role" : "MISSION_SPECIALIST",
+    "rank" : "TRAINEE",
+    "readyForNextMissions" : true
+  } ],
+  "missionResult" : "IN_PROGRESS",
+  "from" : {
+    "id" : 22,
+    "name" : "Tatooine",
+    "location" : {
+      "x" : 249,
+      "y" : 93
+    }
+  },
+  "to" : {
+    "id" : 23,
+    "name" : "Starkiller",
+    "location" : {
+      "x" : 90,
+      "y" : 98
+    }
+  }
+} ]

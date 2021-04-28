@@ -1,5 +1,10 @@
 package com.epam.jwd.core_final.domain;
 
+import com.epam.jwd.core_final.util.PropertyReaderUtil;
+
+import static com.epam.jwd.core_final.domain.PropertyKey.*;
+import static com.epam.jwd.core_final.util.PropertyReaderUtil.*;
+
 /**
  * This class should be IMMUTABLE!
  * <p>
@@ -14,6 +19,58 @@ package com.epam.jwd.core_final.domain;
  * fileRefreshRate {@link Integer}
  * dateTimeFormat {@link String} - date/time format for {@link java.time.format.DateTimeFormatter} pattern
  */
-public class ApplicationProperties {
-    //todo
+public final class ApplicationProperties {
+
+    private final String inputRootDir;
+    private final String outputRootDir;
+    private final String crewFileName;
+    private final String missionsFileName;
+    private final String spaceshipsFileName;
+    private final String spacemapFileName;
+    private final Integer fileRefreshRate;
+    private final String dateTimeFormat;
+
+    public ApplicationProperties() {
+        loadProperties();
+        inputRootDir = getProperty(INPUT_ROOT_DIR);
+        outputRootDir = getProperty(OUTPUT_ROOT_DIR);
+        crewFileName = getProperty(CREW_FILE_NAME);
+        missionsFileName = getProperty(MISSIONS_FILE_NAME);
+        spaceshipsFileName = getProperty(SPACESHIP_FILE_NAME);
+        spacemapFileName = getProperty(SPACEMAP_FILE_NAME);
+        fileRefreshRate = getIntegerProperty(FILE_REFRESH_RATE);
+        dateTimeFormat = getProperty(DATE_TIME_FORMAT);
+    }
+
+    public String getInputRootDir() {
+        return inputRootDir;
+    }
+
+    public String getOutputRootDir() {
+        return outputRootDir;
+    }
+
+    public String getCrewFileName() {
+        return crewFileName;
+    }
+
+    public String getMissionsFileName() {
+        return missionsFileName;
+    }
+
+    public String getSpaceshipsFileName() {
+        return spaceshipsFileName;
+    }
+
+    public String getSpacemapFileName() {
+        return spacemapFileName;
+    }
+
+    public Integer getFileRefreshRate() {
+        return fileRefreshRate;
+    }
+
+    public String getDateTimeFormat() {
+        return dateTimeFormat;
+    }
 }

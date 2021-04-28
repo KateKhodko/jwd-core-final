@@ -21,6 +21,15 @@ public class UnknownEntityException extends RuntimeException {
     public String getMessage() {
         // todo
         // you should use entityName, args (if necessary)
-        return null;
+        String message = "Unknown entity: " + entityName;
+        if (args != null && args.length != 0) {
+            message += " args:\n";
+            StringBuilder argsStr = new StringBuilder();
+            for (Object arg: args) {
+                argsStr.append(arg.toString()).append("\n");
+            }
+            message += argsStr;
+        }
+        return message;
     }
 }
