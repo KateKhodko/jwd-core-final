@@ -1,7 +1,8 @@
-package com.epam.jwd.core_final.context;
+package com.epam.jwd.core_final.repository;
 
 import com.epam.jwd.core_final.exception.InvalidStateException;
 
-public interface Parser {
+@FunctionalInterface
+interface Parser {
     void parse(String str, int lineIndex) throws InvalidStateException;
 }

@@ -1,19 +1,19 @@
 [ {
   "id" : 1,
-  "name" : "efdf",
-  "startDate" : "2021-04-28T03:54:29.4006594",
-  "endDate" : "2021-04-28T03:57:08.4006594",
-  "distance" : 159,
+  "name" : "testing",
+  "startDate" : "2021-04-30T20:02:59.3395281",
+  "endDate" : "2021-04-30T20:03:51.3395281",
+  "distance" : 52,
   "assignedSpaceShip" : {
-    "id" : 21,
-    "name" : "Burn",
+    "id" : 27,
+    "name" : "CS Pathfinder",
     "crew" : {
+      "MISSION_SPECIALIST" : 7,
       "FLIGHT_ENGINEER" : 9,
-      "PILOT" : 3,
       "COMMANDER" : 2,
-      "MISSION_SPECIALIST" : 10
+      "PILOT" : 2
     },
-    "flightDistance" : 452842,
+    "flightDistance" : 475299,
     "readyForNextMissions" : true
   },
   "assignedCrew" : [ {
@@ -45,12 +45,6 @@
     "name" : "Frazer Carr",
     "role" : "FLIGHT_ENGINEER",
     "rank" : "CAPTAIN",
-    "readyForNextMissions" : true
-  }, {
-    "id" : 6,
-    "name" : "Reya Handley",
-    "role" : "PILOT",
-    "rank" : "SECOND_OFFICER",
     "readyForNextMissions" : true
   }, {
     "id" : 7,
@@ -137,45 +131,27 @@
     "rank" : "TRAINEE",
     "readyForNextMissions" : true
   }, {
-    "id" : 35,
-    "name" : "Kiran Burns",
-    "role" : "MISSION_SPECIALIST",
-    "rank" : "SECOND_OFFICER",
-    "readyForNextMissions" : true
-  }, {
     "id" : 36,
     "name" : "Neave Mustafa",
     "role" : "FLIGHT_ENGINEER",
     "rank" : "FIRST_OFFICER",
     "readyForNextMissions" : true
-  }, {
-    "id" : 39,
-    "name" : "Beatrix Mcdonald",
-    "role" : "MISSION_SPECIALIST",
-    "rank" : "TRAINEE",
-    "readyForNextMissions" : true
-  }, {
-    "id" : 40,
-    "name" : "Karan Avalos",
-    "role" : "MISSION_SPECIALIST",
-    "rank" : "TRAINEE",
-    "readyForNextMissions" : true
   } ],
   "missionResult" : "IN_PROGRESS",
   "from" : {
-    "id" : 22,
-    "name" : "Tatooine",
+    "id" : 15,
+    "name" : "Star Forge",
     "location" : {
-      "x" : 249,
-      "y" : 93
+      "x" : 215,
+      "y" : 57
     }
   },
   "to" : {
-    "id" : 23,
-    "name" : "Starkiller",
+    "id" : 4,
+    "name" : "Ceres",
     "location" : {
-      "x" : 90,
-      "y" : 98
+      "x" : 194,
+      "y" : 9
     }
   }
 } ]

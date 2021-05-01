@@ -1,11 +1,11 @@
 package com.epam.jwd.core_final.context.impl;
 
 import com.epam.jwd.core_final.context.ApplicationContext;
-import com.epam.jwd.core_final.context.DataLoader;
 import com.epam.jwd.core_final.domain.*;
 import com.epam.jwd.core_final.exception.InvalidStateException;
 import com.epam.jwd.core_final.factory.EntityFactory;
-import com.epam.jwd.core_final.factory.EntityFactoryResolver;
+import com.epam.jwd.core_final.factory.impl.EntityFactoryResolver;
+import com.epam.jwd.core_final.repository.LoaderFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -46,12 +46,23 @@ public class NassaContext implements ApplicationContext {
      */
     @Override
     public void init() throws InvalidStateException {
-        add(DataLoader.getInstance().readCrew(), CrewMember.class);
-        add(DataLoader.getInstance().readPlanets(), Planet.class);
-        add(DataLoader.getInstance().readSpaceships(), Spaceship.class);
+        load();
     }
 
-    private <T extends BaseEntity> void add(List<T> entities, Class<T> tClass) {
+    private void load() throws InvalidStateException {
+        loadData(CrewMember.class);
+        loadData(Spaceship.class);
+        loadData(Planet.class);
+    }
+
+    @SuppressWarnings("unchecked")
+    private <T extends BaseEntity> void loadData(Class<T> tClass) throws InvalidStateException {
+        LoaderFactory loaderFactory = new LoaderFactory();
+        loaderFactory.getLoader(tClass).readData();
+        loadCollection(loaderFactory.getLoader(tClass).readData(), tClass);
+    }
+
+    private <T extends BaseEntity> void loadCollection(List<T> entities, Class<T> tClass) {
         Collection<T> items = retrieveBaseEntityList(tClass);
         if (items == null) return;
         items.clear();

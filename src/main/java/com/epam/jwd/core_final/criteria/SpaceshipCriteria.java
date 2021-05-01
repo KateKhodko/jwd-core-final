@@ -40,13 +40,13 @@ public class SpaceshipCriteria extends Criteria<Spaceship> {
             return this;
         }
 
-        public SpaceshipBuilder withIsReadyForNextMissions(long flightDistance) {
-            spaceshipCriteria.flightDistance = flightDistance;
+        public SpaceshipBuilder withIsReadyForNextMissions(boolean isReadyForNextMissions) {
+            spaceshipCriteria.isReadyForNextMissions = isReadyForNextMissions;
             return this;
         }
 
-        public SpaceshipBuilder withFlightDistance(boolean isReadyForNextMissions) {
-            spaceshipCriteria.isReadyForNextMissions = isReadyForNextMissions;
+        public SpaceshipBuilder withFlightDistance(long flightDistance) {
+            spaceshipCriteria.flightDistance = flightDistance;
             return this;
         }
 

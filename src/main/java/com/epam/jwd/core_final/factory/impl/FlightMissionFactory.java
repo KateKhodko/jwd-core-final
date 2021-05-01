@@ -3,6 +3,7 @@ package com.epam.jwd.core_final.factory.impl;
 import com.epam.jwd.core_final.domain.FlightMission;
 import com.epam.jwd.core_final.domain.MissionResult;
 import com.epam.jwd.core_final.domain.Planet;
+import com.epam.jwd.core_final.domain.Point;
 import com.epam.jwd.core_final.factory.EntityFactory;
 import com.epam.jwd.core_final.service.impl.SpacemapServiceImpl;
 
@@ -22,7 +23,7 @@ public class FlightMissionFactory implements EntityFactory<FlightMission> {
             Planet from = (Planet) args[3];
             Planet to = (Planet) args[4];
             LocalDateTime startDate = (LocalDateTime) args[2];
-            long distance = SpacemapServiceImpl.getInstance().getDistanceBetweenPlanets(from, to);
+            long distance = (long) Point.computeDistance(from.getLocation(), to.getLocation());
             return new FlightMission(
                     id,
                     (String) args[1],

@@ -26,8 +26,8 @@ public class CrewServiceImpl implements CrewService {
     private static CrewServiceImpl instance;
     private final List<CrewMember> crewMembers;
 
-    private CrewServiceImpl(ApplicationContext applicationContext) {
-        crewMembers = (List<CrewMember>) applicationContext.retrieveBaseEntityList(CrewMember.class);
+    private CrewServiceImpl(List<CrewMember> crewMembers) {
+        this.crewMembers = crewMembers;
     }
 
     public static CrewServiceImpl getInstance() {
@@ -37,9 +37,9 @@ public class CrewServiceImpl implements CrewService {
         return instance;
     }
 
-    public static void init(ApplicationContext applicationContext) {
+    public static void init(List<CrewMember> crewMembers) {
         if (instance == null) {
-            instance = new CrewServiceImpl(applicationContext);
+            instance = new CrewServiceImpl(crewMembers);
         }
     }
 

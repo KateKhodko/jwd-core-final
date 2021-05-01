@@ -1,16 +1,12 @@
 package com.epam.jwd.core_final.menu;
 
-import com.epam.jwd.core_final.context.DataLoader;
 import com.epam.jwd.core_final.criteria.FlightMissionCriteria;
 import com.epam.jwd.core_final.domain.FlightMission;
 import com.epam.jwd.core_final.domain.MissionResult;
 import com.epam.jwd.core_final.domain.Planet;
-import com.epam.jwd.core_final.exception.CrewMemberNotAbleAssignedException;
-import com.epam.jwd.core_final.exception.MissionNotAbleCreateException;
-import com.epam.jwd.core_final.exception.MissionUpdateException;
-import com.epam.jwd.core_final.exception.SpaceshipNotAbleAssignedException;
-import com.epam.jwd.core_final.exception.UnknownEntityException;
+import com.epam.jwd.core_final.exception.*;
 import com.epam.jwd.core_final.factory.impl.FlightMissionFactory;
+import com.epam.jwd.core_final.repository.LoaderFactory;
 import com.epam.jwd.core_final.service.impl.CrewServiceImpl;
 import com.epam.jwd.core_final.service.impl.MissionServiceImpl;
 import com.epam.jwd.core_final.service.impl.SpaceShipServiceImpl;
@@ -18,6 +14,7 @@ import com.epam.jwd.core_final.service.impl.SpacemapServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -122,10 +119,15 @@ public class MissionMenu {
     }
 
     void writeMissions() {
-        DataLoader.getInstance().writeMissions();
-        String fileWriteInfo = "File has written successfully";
-        LOGGER.info(fileWriteInfo);
-        System.out.println(fileWriteInfo);
+        try {
+            LoaderFactory loaderFactory = new LoaderFactory();
+            loaderFactory.getLoader(FlightMission.class).writeData();
+            String fileWriteInfo = "File has written successfully";
+            LOGGER.info(fileWriteInfo);
+            System.out.println(fileWriteInfo);
+        } catch (IOException e) {
+            LOGGER.error(e.getMessage());
+        }
     }
 
     private void printSubmenu() {

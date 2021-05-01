@@ -1,6 +1,5 @@
 package com.epam.jwd.core_final.service.impl;
 
-import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.domain.Planet;
 import com.epam.jwd.core_final.domain.Point;
 import com.epam.jwd.core_final.service.SpacemapService;
@@ -13,8 +12,8 @@ public class SpacemapServiceImpl implements SpacemapService {
 
     private final List<Planet> planets;
 
-    private SpacemapServiceImpl(ApplicationContext applicationContext) {
-        planets = (List<Planet>) applicationContext.retrieveBaseEntityList(Planet.class);
+    private SpacemapServiceImpl(List<Planet> planets) {
+        this.planets = planets;
     }
 
     public static SpacemapServiceImpl getInstance() {
@@ -24,9 +23,9 @@ public class SpacemapServiceImpl implements SpacemapService {
         return instance;
     }
 
-    public synchronized static void init(ApplicationContext applicationContext) {
+    public synchronized static void init(List<Planet> planets) {
         if (instance == null) {
-            instance = new SpacemapServiceImpl(applicationContext);
+            instance = new SpacemapServiceImpl(planets);
         }
     }
 

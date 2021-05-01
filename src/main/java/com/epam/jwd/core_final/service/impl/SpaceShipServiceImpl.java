@@ -1,6 +1,5 @@
 package com.epam.jwd.core_final.service.impl;
 
-import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.impl.NassaContext;
 import com.epam.jwd.core_final.criteria.Criteria;
 import com.epam.jwd.core_final.criteria.SpaceshipCriteria;
@@ -23,8 +22,8 @@ public class SpaceShipServiceImpl implements SpaceshipService {
 
     private final List<Spaceship> spaceships;
 
-    private SpaceShipServiceImpl(ApplicationContext applicationContext) {
-        spaceships = (List<Spaceship>) applicationContext.retrieveBaseEntityList(Spaceship.class);
+    private SpaceShipServiceImpl(List<Spaceship> spaceships) {
+        this.spaceships = spaceships;
     }
 
     public static SpaceShipServiceImpl getInstance() {
@@ -34,9 +33,9 @@ public class SpaceShipServiceImpl implements SpaceshipService {
         return instance;
     }
 
-    public static void init(ApplicationContext applicationContext) {
+    public static void init(List<Spaceship> spaceships) {
         if (instance == null) {
-            instance = new SpaceShipServiceImpl(applicationContext);
+            instance = new SpaceShipServiceImpl(spaceships);
         }
     }
 

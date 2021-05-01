@@ -1,6 +1,5 @@
 package com.epam.jwd.core_final.service.impl;
 
-import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.impl.NassaContext;
 import com.epam.jwd.core_final.criteria.Criteria;
 import com.epam.jwd.core_final.criteria.FlightMissionCriteria;
@@ -25,8 +24,8 @@ public class MissionServiceImpl implements MissionService {
     private static MissionServiceImpl instance;
     private final List<FlightMission> missions;
 
-    private MissionServiceImpl(ApplicationContext applicationContext) {
-        missions = (List<FlightMission>) applicationContext.retrieveBaseEntityList(FlightMission.class);
+    private MissionServiceImpl(List<FlightMission> missions) {
+        this.missions = missions;
     }
 
     public static MissionServiceImpl getInstance() {
@@ -36,9 +35,9 @@ public class MissionServiceImpl implements MissionService {
         return instance;
     }
 
-    public static void init(ApplicationContext applicationContext) {
+    public static void init(List<FlightMission> missions) {
         if (instance == null) {
-            instance = new MissionServiceImpl(applicationContext);
+            instance = new MissionServiceImpl(missions);
         }
     }
 
@@ -82,10 +81,10 @@ public class MissionServiceImpl implements MissionService {
         if (!oldFlightMission.getName().equals(flightMission.getName())) {
             throw new MissionUpdateException("Name was changed");
         }
-        if (!oldFlightMission.getStartDate().equals(flightMission.getStartDate())) {
+        if (oldFlightMission.getStartDate().getSecond() != (flightMission.getStartDate().getSecond())) {
             throw new MissionUpdateException("Start date was changed");
         }
-        if (!oldFlightMission.getStartDate().equals(flightMission.getEndDate())) {
+        if (oldFlightMission.getEndDate().getSecond() != (flightMission.getEndDate().getSecond())) {
             throw new MissionUpdateException("End date was changed");
         }
         if (!oldFlightMission.getFrom().equals(flightMission.getFrom())) {
