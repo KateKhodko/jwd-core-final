@@ -1,16 +1,7 @@
 package com.epam.jwd.core_final.domain;
 
-import static com.epam.jwd.core_final.domain.PropertyKey.CREW_FILE_NAME;
-import static com.epam.jwd.core_final.domain.PropertyKey.DATE_TIME_FORMAT;
-import static com.epam.jwd.core_final.domain.PropertyKey.FILE_REFRESH_RATE;
-import static com.epam.jwd.core_final.domain.PropertyKey.INPUT_ROOT_DIR;
-import static com.epam.jwd.core_final.domain.PropertyKey.MISSIONS_FILE_NAME;
-import static com.epam.jwd.core_final.domain.PropertyKey.OUTPUT_ROOT_DIR;
-import static com.epam.jwd.core_final.domain.PropertyKey.SPACEMAP_FILE_NAME;
-import static com.epam.jwd.core_final.domain.PropertyKey.SPACESHIP_FILE_NAME;
-import static com.epam.jwd.core_final.util.PropertyReaderUtil.getIntegerProperty;
-import static com.epam.jwd.core_final.util.PropertyReaderUtil.getProperty;
-import static com.epam.jwd.core_final.util.PropertyReaderUtil.loadProperties;
+import static com.epam.jwd.core_final.domain.PropertyKey.*;
+import static com.epam.jwd.core_final.util.PropertyReaderUtil.*;
 
 /**
  * This class should be IMMUTABLE!

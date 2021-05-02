@@ -4,29 +4,23 @@ import com.epam.jwd.core_final.domain.Planet;
 import com.epam.jwd.core_final.domain.Point;
 import com.epam.jwd.core_final.service.SpacemapService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpacemapServiceImpl implements SpacemapService {
 
     private static SpacemapServiceImpl instance;
 
-    private final List<Planet> planets;
+    private List<Planet> planets = new ArrayList<>();
 
-    private SpacemapServiceImpl(List<Planet> planets) {
-        this.planets = planets;
+    private SpacemapServiceImpl() {
     }
 
     public static SpacemapServiceImpl getInstance() {
         if (instance == null) {
-            throw new AssertionError("You have to call init first");
+            instance = new SpacemapServiceImpl();
         }
         return instance;
-    }
-
-    public synchronized static void init(List<Planet> planets) {
-        if (instance == null) {
-            instance = new SpacemapServiceImpl(planets);
-        }
     }
 
     @Override
@@ -43,5 +37,9 @@ public class SpacemapServiceImpl implements SpacemapService {
     @Override
     public int getDistanceBetweenPlanets(Planet first, Planet second) {
         return (int) Point.computeDistance(first.getLocation(), second.getLocation());
+    }
+
+    public void setPlanets(List<Planet> planets) {
+        this.planets = planets;
     }
 }

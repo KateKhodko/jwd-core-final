@@ -1,6 +1,7 @@
 package com.epam.jwd.core_final.service.impl;
 
-import com.epam.jwd.core_final.domain.*;
+import com.epam.jwd.core_final.domain.Planet;
+import com.epam.jwd.core_final.domain.Point;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,9 +12,11 @@ import java.util.List;
 public class SpacemapServiceImplTest {
 
     private final List<Planet> planets = new ArrayList<>();
-    private final SpacemapServiceImpl spacemapService;
+    private final SpacemapServiceImpl spacemapService = SpacemapServiceImpl.getInstance();
 
-    public SpacemapServiceImplTest() {
+    @Before
+    public void setUp() {
+        planets.clear();
         Planet planet1 = new Planet(1L, "Uran", new Point(10, 20));
         Planet planet2 = new Planet(2L, "Saturn", new Point(40, 30));
         Planet planet3 = new Planet(3L, "Bob", new Point(20, 100));
@@ -22,8 +25,7 @@ public class SpacemapServiceImplTest {
         planets.add(planet2);
         planets.add(planet3);
 
-        SpacemapServiceImpl.init(planets);
-        spacemapService = SpacemapServiceImpl.getInstance();
+        spacemapService.setPlanets(planets);
     }
 
     @Test

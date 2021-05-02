@@ -7,6 +7,7 @@ import com.epam.jwd.core_final.domain.Role;
 import com.epam.jwd.core_final.exception.CrewMemberNotAbleCreateException;
 import com.epam.jwd.core_final.exception.CrewMemberUpdateException;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -15,9 +16,11 @@ import java.util.List;
 public class CrewServiceImplTest {
 
     private final List<CrewMember> crewMembers = new ArrayList<>();
-    private final CrewServiceImpl crewService;
+    private final CrewServiceImpl crewService = CrewServiceImpl.getInstance();
 
-    public CrewServiceImplTest() {
+    @Before
+    public void setUp() {
+        crewMembers.clear();
         CrewMember crewMember1 = new CrewMember(1L, "Petya", Role.COMMANDER, Rank.CAPTAIN);
         CrewMember crewMember2 = new CrewMember(2L, "Vasya", Role.FLIGHT_ENGINEER, Rank.CAPTAIN);
         CrewMember crewMember3 = new CrewMember(3L, "Bob", Role.COMMANDER, Rank.SECOND_OFFICER);
@@ -26,8 +29,7 @@ public class CrewServiceImplTest {
         crewMembers.add(crewMember2);
         crewMembers.add(crewMember3);
 
-        CrewServiceImpl.init(crewMembers);
-        crewService = CrewServiceImpl.getInstance();
+        crewService.setCrewMembers(crewMembers);
     }
 
     @Test
@@ -43,7 +45,6 @@ public class CrewServiceImplTest {
 
         CrewMember createdMember = crewService.createCrewMember(crewMember4);
         Assert.assertEquals(createdMember, crewMemberExp);
-        crewMembers.remove(createdMember);
     }
 
     @Test
@@ -79,7 +80,6 @@ public class CrewServiceImplTest {
 
     @Test
     public void updateCrewMemberDetails() throws CrewMemberUpdateException {
-        MissionServiceImpl.init(new ArrayList<>());
         CrewMember crewMember = new CrewMember(1L, "Petya", Role.FLIGHT_ENGINEER, Rank.FIRST_OFFICER);
         CrewMember crewMemberUpdated = crewService.updateCrewMemberDetails(crewMember);
         Assert.assertEquals(crewMember, crewMemberUpdated);

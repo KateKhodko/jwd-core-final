@@ -20,10 +20,10 @@ public interface Application {
         final NassaContext nassaContext = new NassaContext();
         nassaContext.init();
 
-        CrewServiceImpl.init((List<CrewMember>) nassaContext.retrieveBaseEntityList(CrewMember.class));
-        MissionServiceImpl.init((List<FlightMission>) nassaContext.retrieveBaseEntityList(FlightMission.class));
-        SpacemapServiceImpl.init((List<Planet>) nassaContext.retrieveBaseEntityList(Planet.class));
-        SpaceShipServiceImpl.init((List<Spaceship>) nassaContext.retrieveBaseEntityList(Spaceship.class));
+        CrewServiceImpl.getInstance().setCrewMembers((List<CrewMember>) nassaContext.retrieveBaseEntityList(CrewMember.class));
+        MissionServiceImpl.getInstance().setMissions((List<FlightMission>) nassaContext.retrieveBaseEntityList(FlightMission.class));
+        SpacemapServiceImpl.getInstance().setPlanets((List<Planet>) nassaContext.retrieveBaseEntityList(Planet.class));
+        SpaceShipServiceImpl.getInstance().setSpaceships((List<Spaceship>) nassaContext.retrieveBaseEntityList(Spaceship.class));
 
         final MainMenu mainMenu = new MainMenu();
         mainMenu.start();

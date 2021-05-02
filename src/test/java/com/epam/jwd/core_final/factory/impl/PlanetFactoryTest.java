@@ -5,8 +5,6 @@ import com.epam.jwd.core_final.domain.Point;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class PlanetFactoryTest {
 
     private final Planet planetExp = new Planet(null, "Uran", new Point(23, 45));

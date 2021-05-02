@@ -11,11 +11,11 @@ public enum LoaderType {
 
     private final BaseLoader loader;
 
-    <T extends BaseEntity>LoaderType(BaseLoader<T> loader) {
+    <T extends BaseEntity> LoaderType(BaseLoader<T> loader) {
         this.loader = loader;
     }
 
-    public<T extends BaseEntity> BaseLoader<T> getLoader() {
+    public <T extends BaseEntity> BaseLoader<T> getLoader() {
         return loader;
     }
 }

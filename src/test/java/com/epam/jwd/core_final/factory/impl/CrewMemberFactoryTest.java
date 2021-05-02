@@ -6,8 +6,6 @@ import com.epam.jwd.core_final.domain.Role;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CrewMemberFactoryTest {
 
     private final CrewMember crewMemberExp = new CrewMember(null, "Ivan", Role.FLIGHT_ENGINEER, Rank.TRAINEE);

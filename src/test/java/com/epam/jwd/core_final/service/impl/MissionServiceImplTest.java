@@ -8,6 +8,7 @@ import com.epam.jwd.core_final.domain.Point;
 import com.epam.jwd.core_final.exception.CrewMemberNotAbleCreateException;
 import com.epam.jwd.core_final.exception.MissionUpdateException;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
@@ -17,9 +18,11 @@ import java.util.List;
 public class MissionServiceImplTest {
 
     private final List<FlightMission> missions = new ArrayList<>();
-    private final MissionServiceImpl missionService;
+    private final MissionServiceImpl missionService = MissionServiceImpl.getInstance();
 
-    public MissionServiceImplTest() {
+    @Before
+    public void setUp() {
+        missions.clear();
         Planet from1 = new Planet(1L, "Sun", new Point(29, 45));
         Planet to1 = new Planet(2L, "Neptune", new Point(56, 43));
         FlightMission flightMission1 = new FlightMission(
@@ -60,8 +63,7 @@ public class MissionServiceImplTest {
         missions.add(flightMission2);
         missions.add(flightMission3);
 
-        MissionServiceImpl.init(missions);
-        missionService = MissionServiceImpl.getInstance();
+        missionService.setMissions(missions);
     }
 
 
@@ -99,7 +101,6 @@ public class MissionServiceImplTest {
 
         FlightMission flightMissionCreated = missionService.createMission(flightMission);
         Assert.assertEquals(flightMissionCreated, flightMissionExp);
-        missions.remove(flightMissionCreated);
     }
 
     @Test

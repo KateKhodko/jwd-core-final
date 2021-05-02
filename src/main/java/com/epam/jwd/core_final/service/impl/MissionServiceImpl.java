@@ -12,6 +12,7 @@ import com.epam.jwd.core_final.factory.impl.FlightMissionFactory;
 import com.epam.jwd.core_final.service.MissionService;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -22,23 +23,16 @@ import static com.epam.jwd.core_final.domain.MissionResult.FAILED;
 public class MissionServiceImpl implements MissionService {
 
     private static MissionServiceImpl instance;
-    private final List<FlightMission> missions;
+    private List<FlightMission> missions = new ArrayList<>();
 
-    private MissionServiceImpl(List<FlightMission> missions) {
-        this.missions = missions;
+    private MissionServiceImpl() {
     }
 
     public static MissionServiceImpl getInstance() {
         if (instance == null) {
-            throw new AssertionError("You have to call init first");
+            instance = new MissionServiceImpl();
         }
         return instance;
-    }
-
-    public static void init(List<FlightMission> missions) {
-        if (instance == null) {
-            instance = new MissionServiceImpl(missions);
-        }
     }
 
     @Override
@@ -134,5 +128,9 @@ public class MissionServiceImpl implements MissionService {
             }
         }
         return true;
+    }
+
+    public void setMissions(List<FlightMission> missions) {
+        this.missions = missions;
     }
 }

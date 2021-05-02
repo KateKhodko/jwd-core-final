@@ -11,6 +11,7 @@ import com.epam.jwd.core_final.exception.SpaceshipUpdateException;
 import com.epam.jwd.core_final.factory.impl.SpaceshipFactory;
 import com.epam.jwd.core_final.service.SpaceshipService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -20,23 +21,16 @@ public class SpaceShipServiceImpl implements SpaceshipService {
 
     private static SpaceShipServiceImpl instance;
 
-    private final List<Spaceship> spaceships;
+    private List<Spaceship> spaceships = new ArrayList<>();
 
-    private SpaceShipServiceImpl(List<Spaceship> spaceships) {
-        this.spaceships = spaceships;
+    private SpaceShipServiceImpl() {
     }
 
     public static SpaceShipServiceImpl getInstance() {
         if (instance == null) {
-            throw new AssertionError("You have to call init first");
+            instance = new SpaceShipServiceImpl();
         }
         return instance;
-    }
-
-    public static void init(List<Spaceship> spaceships) {
-        if (instance == null) {
-            instance = new SpaceShipServiceImpl(spaceships);
-        }
     }
 
     @Override
@@ -114,5 +108,9 @@ public class SpaceShipServiceImpl implements SpaceshipService {
         }
         int i = (int) (Math.random() * readySpaceships.size());
         assignSpaceshipOnMission(readySpaceships.get(i), flightMission);
+    }
+
+    public void setSpaceships(List<Spaceship> spaceships) {
+        this.spaceships = spaceships;
     }
 }

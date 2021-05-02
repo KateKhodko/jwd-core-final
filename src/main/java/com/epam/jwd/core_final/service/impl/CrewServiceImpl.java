@@ -1,6 +1,5 @@
 package com.epam.jwd.core_final.service.impl;
 
-import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.impl.NassaContext;
 import com.epam.jwd.core_final.criteria.CrewMemberCriteria;
 import com.epam.jwd.core_final.criteria.Criteria;
@@ -14,6 +13,7 @@ import com.epam.jwd.core_final.exception.MissionNotAbleCreateException;
 import com.epam.jwd.core_final.factory.impl.CrewMemberFactory;
 import com.epam.jwd.core_final.service.CrewService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,23 +24,16 @@ import java.util.stream.Stream;
 public class CrewServiceImpl implements CrewService {
 
     private static CrewServiceImpl instance;
-    private final List<CrewMember> crewMembers;
+    private List<CrewMember> crewMembers = new ArrayList<>();
 
-    private CrewServiceImpl(List<CrewMember> crewMembers) {
-        this.crewMembers = crewMembers;
+    private CrewServiceImpl() {
     }
 
     public static CrewServiceImpl getInstance() {
         if (instance == null) {
-            throw new AssertionError("You have to call init first");
+            instance = new CrewServiceImpl();
         }
         return instance;
-    }
-
-    public static void init(List<CrewMember> crewMembers) {
-        if (instance == null) {
-            instance = new CrewServiceImpl(crewMembers);
-        }
     }
 
     @Override
@@ -146,5 +139,9 @@ public class CrewServiceImpl implements CrewService {
             }
         }
         return count < crew.get(role);
+    }
+
+    public void setCrewMembers(List<CrewMember> crewMembers) {
+        this.crewMembers = crewMembers;
     }
 }
